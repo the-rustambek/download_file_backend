@@ -10,11 +10,11 @@
 <body>
 
     <h1>
-        Hello Elnurjon
+        Hello Elnurjon  
     </h1>
     <form method="POST">
-        <input type="text" name="name" placeholder="Todo Name" required>
-        <input type="datetime-local" name="name" placeholder="Todo Name" required>
+        <input type="text" name="name" placeholder="Todo Name" required />
+        <input type="datetime-local" name="date" required />
         <button>Qo'shish</button>
     </form>
     <table>
@@ -44,7 +44,7 @@
                     <td><%= item.name %></td>
                     <td><%= item.date %></td>
                     <td>
-                        <a href="/delete/<%= item.id %>"></a>
+                        <a href="/delete/<%= item.id %>">Delete</a>
                     </td>
                 </tr>
         </tbody>

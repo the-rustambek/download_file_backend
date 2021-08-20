@@ -2,10 +2,13 @@ const express = require("express")
 const server = express()
 const path = require('path')
 
-server.listen(8090, () =>console.log("Server ready at 8090"))
+// const ejsLint = require('ejs-lint');
+
+server.listen(5050, () => console.log("Server ready at 8090"))
 
 server.set("view engine", "ejs")
 
+const data = []
 
 server.use(express.json())
 server.use(
@@ -24,5 +27,12 @@ server.get("/",(req,res) =>{
 })
 
 server.post("/",(req,res) =>{
-    console.log(req.body);
+    data.push({ 
+        id: data.length + 1, 
+        name: req.body.name, 
+        date: req.body.date,
+
+    })
+    res.redirect("/")
+    // console.log(req.body);
 })
