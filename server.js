@@ -4,7 +4,7 @@ const path = require('path')
 
 // const ejsLint = require('ejs-lint');
 
-server.listen(5050, () => console.log("Server ready at 8090"))
+server.listen(2020, () => console.log("Server ready at 8090"))
 
 server.set("view engine", "ejs")
 
@@ -36,3 +36,10 @@ server.post("/",(req,res) =>{
     res.redirect("/")
     // console.log(req.body);
 })
+
+server.get("/delete/:id", (req,res) =>{
+    let index =data.findIndex((e) =>( e.id == req.params.id))
+    data.splice(index,1)
+    res.redirect("/")
+})
+
