@@ -5,53 +5,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> EJS</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
-<body class="p-4">
 
-    <h1>
-        Hello Elnurjon  
-    </h1>
-    <form method="POST" class="table">
-        <input type="text" name="name" placeholder="Todo Name" required />
-        <input type="datetime-local" name="date" required />
-        <button>Qo'shish</button>
-    </form>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Nomer
-                </th>
+<body class="d-flex justify-content-center align-items-center" style=" height:100vh;background-color: blueviolet;">
 
-                <th>
-                    Nomi
-                </th>
+    <div class="">
+        <h2 class="mb-4 pb-4">Assalomu alaykum, nima qilmoqchisiz ?</h2>
+        <div class="row text-center g-3">
+            <button type="button" class="btn btn-primary col-12" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-whatever="@mdo">
+                Narsa Yuklash
+            </button>
+            <button class=" col-12 btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-whatever="@getbootstrap">Yuklab olish</button>
+        </div>
+    </div>
 
-                <th>
-                    Vaqti
-                </th>
 
-                <th>
-                    Amali
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <% for(let item of data) {%>
-                <tr>
-                    <td><%= item.id %></td>
-                    <td><%= item.name %></td>
-                    <td><%= item.date %></td>
-                    <td>
-                        <a href="/delete/<%= item.id %>">Delete</a>
-                    </td>
-                </tr>
 
-                <%}%>
-        </tbody>
-    </table>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Yuklashga Xush kelibsiz</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form enctype="multipart/form-data" method="POST">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Ixtiyoriy ID kiriting</label>
+                            <input type="password" class="form-control" minlength="2" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Faylni yuklang</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <button class="btn-primary rounded-0">Fayl yuklash</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Yuklab olishga Xush kelibsiz</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form enctype="multipart/form-data" method="POST">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">ID kiriting</label>
+                            <input type="password" class="form-control" minlength="2" id="exampleInputPassword1">
+                        </div>
+
+                        <button class="btn-primary rounded-0">Faylni yuklab olish</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
