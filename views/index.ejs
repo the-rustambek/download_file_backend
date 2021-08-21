@@ -1,5 +1,10 @@
+<!-- HTML ning bazi joylarini o'xshata olmadim, o'zimnikini o'chirib tashlab Sarvarnikidan ko'chirdim, versatkasini -->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,10 +40,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="/send_data" id="sendData" class="form-control" method="POST"
+                    <!-- action="/send_data"  -->
+                    <form id="sendData" class="form-control" method="POST"
                         enctype="multipart/form-data" autocomplete="off">
-                        <input type="password" class="form-control mt-3" name="password" minlength="3" placeholder="Parol kiriting"
-                            required>
+                        <input type="password" class="form-control mt-3" name="password" minlength="3"
+                            placeholder="Parol kiriting" required>
                         <input type="file" class="form-control mt-3" name="file" required>
                         <button type="submit" class="btn mt-3 btn-primary">Fayl jo'natishga Xush kelibsiz</button>
                     </form>
@@ -57,8 +63,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="/receive" class="form-control" method="POST" autocomplete="off">
-                        <input type="text" class="form-control"minlength="3" name="password"
+                    <!-- action="/receive" -->
+                    <form  class="form-control" method="POST" autocomplete="off">
+                        <input type="text" class="form-control" minlength="3" name="password"
                             placeholder="Faylning parolini kiriting">
                         <button class="btn btn-danger mt-3" type="submit">Qabul qilish</button>
                     </form>
