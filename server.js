@@ -7,7 +7,8 @@ const jonatishRouter = require("./Routes/jonatishRouter")
 const yuklabOlishRouter = require("./Routes/yuklabOlishRouter")
 const data = require("./modules/database")
 
-server.listen(4444, () => console.log("Server ready at 8090"))
+const PORT = process.env.PORT || 4400;
+server.listen(PORT, () => console.log("Server ready at 8090"))
 
 server.set("view engine", "ejs")
 
@@ -27,19 +28,11 @@ server.get("/", (req, res) => {
     res.render(path.join("index"))
 })
 
+
+
 server.use("/", homeRoute) 
-server.use("/jonat", jonatishRouter)
-server.use("/yuklabOl", yuklabOlishRouter)
-
-
-server.post("/",expressFileUpload(),(req,res)=>{
-    req.files.file.mv(path.join(__dirname, "public","files",req.files.file.name))
-    data.push({
-        ...req.body,
-        filename: req.files.file.name,
-    })
-    res.redirect("/");
-})
+server.use("/jonatish", jonatishRouter)
+server.use("/yuklabOlish", yuklabOlishRouter)
 
 
 
@@ -51,26 +44,3 @@ server.post("/",expressFileUpload(),(req,res)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-// server.post("/",expressFileUpload(),(req,res) =>{
-//     console.log(req.body);
-//     data.push(req.body)
-//     res.redirect("/")
-//     // console.log(req.body);
-// })
-
-
-// server.get("/admin", (req,res) =>{
-//     res.render("index",{
-//         data,
-//     })
-// })
