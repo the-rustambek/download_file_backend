@@ -11,8 +11,8 @@ router.post("/", async (req, res) => {
     data = await JSON.parse(data)
     data = await data.find((e) => e.password == req.body.password)
     // console.log(req.body.password)
-    let fileName = data["filename"]
-    // console.log(fileName)
+    let fileName = data["file"]
+    console.log(fileName)
     let filePathData = path.join(__dirname, "public", "files", fileName)
     // console.log(filePathData)
     res.download(filePathData)
